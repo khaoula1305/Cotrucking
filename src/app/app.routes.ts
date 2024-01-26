@@ -8,61 +8,86 @@ import { CityEditComponent } from './components/city/city-edit/city-edit.compone
 import { CountryEditComponent } from './components/country/country-edit/country-edit.component';
 import { AuthGuard } from './services/auth-guard/auth-guard.service';
 import { CountryListComponent } from './components/country/country-list/country-list.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 
 export const routes: Routes = [
-    {
-        path: 'shipment-edit/:id/edit',
-        component: ShipmentEditComponent,
-        data: { screenName: PageConstant.Shipment, action: FunctionalityConstant.UPDATE },
-        canActivate: [AuthGuard],
-      },
-      {
-        path: 'shipment-edit/:id',
-        component: ShipmentEditComponent,
-        data: { screenName: PageConstant.Shipment, action: FunctionalityConstant.READ },
-        canActivate: [AuthGuard],
-      },
-      {
-        path: 'shipment-list',
-        component: ShipmentListComponent,
-        data: { screenName: PageConstant.Shipment, action: FunctionalityConstant.READ },
-        canActivate: [AuthGuard],
-      },
-      {
-        path: 'country-edit/:id/edit',
-        component: CountryEditComponent,
-        data: { screenName: PageConstant.Country, action: FunctionalityConstant.UPDATE },
-        canActivate: [AuthGuard],
-      },
-      {
-        path: 'country-edit/:id',
-        component: CountryEditComponent,
-        data: { screenName: PageConstant.Country, action: FunctionalityConstant.READ },
-        canActivate: [AuthGuard],
-      },
-      {
-        path: 'country-list',
-        component: CountryListComponent,
-        data: { screenName: PageConstant.Country, action: FunctionalityConstant.READ },
-        canActivate: [AuthGuard],
-      },
-      {
-        path: 'city-edit/:id/edit',
-        component: CityEditComponent,
-        data: { screenName: PageConstant.City, action: FunctionalityConstant.UPDATE },
-        canActivate: [AuthGuard],
-      },
-      {
-        path: 'city-edit/:id',
-        component: CityEditComponent,
-        data: { screenName: PageConstant.City, action: FunctionalityConstant.READ },
-        canActivate: [AuthGuard],
-      },
-      {
-        path: 'city-list',
-        component: CityListComponent,
-        data: { screenName: PageConstant.City, action: FunctionalityConstant.READ },
-        canActivate: [AuthGuard],
-      },
-      
+  {
+    path: '',
+    component: HomePageComponent,
+  },
+  {
+    path: 'shipment-edit/:id/edit',
+    component: ShipmentEditComponent,
+    data: {
+      screenName: PageConstant.Shipment,
+      action: FunctionalityConstant.UPDATE,
+    },
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'shipment-edit/:id',
+    component: ShipmentEditComponent,
+    data: {
+      screenName: PageConstant.Shipment,
+      action: FunctionalityConstant.READ,
+    },
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'shipment-list',
+    component: ShipmentListComponent,
+    data: {
+      screenName: PageConstant.Shipment,
+      action: FunctionalityConstant.READ,
+    },
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'country-edit/:id/edit',
+    component: CountryEditComponent,
+    data: {
+      screenName: PageConstant.Country,
+      action: FunctionalityConstant.UPDATE,
+    },
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'country-edit/:id',
+    component: CountryEditComponent,
+    data: {
+      screenName: PageConstant.Country,
+      action: FunctionalityConstant.READ,
+    },
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'country-list',
+    component: CountryListComponent,
+    data: {
+      screenName: PageConstant.Country,
+      action: FunctionalityConstant.READ,
+    },
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'city-edit/:id/edit',
+    component: CityEditComponent,
+    data: {
+      screenName: PageConstant.City,
+      action: FunctionalityConstant.UPDATE,
+    },
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'city-edit/:id',
+    component: CityEditComponent,
+    data: { screenName: PageConstant.City, action: FunctionalityConstant.READ },
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'city-list',
+    component: CityListComponent,
+    data: { screenName: PageConstant.City, action: FunctionalityConstant.READ },
+    canActivate: [AuthGuard],
+  },
 ];

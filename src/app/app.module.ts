@@ -26,11 +26,11 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { InputTextareaModule } from 'primeng/inputtextarea';
-
 import { CityListComponent } from './components/city/city-list/city-list.component';
+import { CityEditComponent } from './components/city/city-edit/city-edit.component';
 
 @NgModule({
-  declarations: [CityListComponent],
+  declarations: [CityListComponent, CityEditComponent],
   imports: [
     CommonModule,
     MenubarModule,

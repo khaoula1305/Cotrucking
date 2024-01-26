@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
 import { MenubarModule } from 'primeng/menubar';
 
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
-  imports: [MenubarModule],
+  imports: [MenubarModule, ButtonModule, InputTextModule],
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss',
 })
@@ -36,7 +38,45 @@ export class NavBarComponent {
           // More subitems if needed
         ],
       },
-      // More items if needed
+      {
+        label: 'Users',
+        icon: 'pi pi-fw pi-user',
+        routerLink: ['/user-list'],
+      },
+      {
+        label: 'Events',
+        icon: 'pi pi-fw pi-calendar',
+        items: [
+          {
+            label: 'Edit',
+            icon: 'pi pi-fw pi-pencil',
+            items: [
+              {
+                label: 'Save',
+                icon: 'pi pi-fw pi-calendar-plus',
+              },
+              {
+                label: 'Delete',
+                icon: 'pi pi-fw pi-calendar-minus',
+              },
+            ],
+          },
+          {
+            label: 'Archieve',
+            icon: 'pi pi-fw pi-calendar-times',
+            items: [
+              {
+                label: 'Remove',
+                icon: 'pi pi-fw pi-calendar-minus',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        label: 'Quit',
+        icon: 'pi pi-fw pi-power-off',
+      },
     ];
   }
 }

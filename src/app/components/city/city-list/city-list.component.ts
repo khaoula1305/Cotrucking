@@ -32,7 +32,7 @@ export class CityListComponent implements OnInit {
   }
 
   openNew() {
-    this.city = {};
+    this.city = new City();
     this.submitted = false;
     this.cityDialog = true;
   }
@@ -69,7 +69,7 @@ export class CityListComponent implements OnInit {
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
         this.cities = this.cities.filter((val) => val.id !== city.id);
-        this.city = {};
+        this.city = new City();
         this.messageService.add({
           severity: 'success',
           summary: 'Successful',
@@ -99,7 +99,6 @@ export class CityListComponent implements OnInit {
         });
       } else {
         this.city.id = this.createId();
-        this.city.image = 'city-placeholder.svg';
         this.cities.push(this.city);
         this.messageService.add({
           severity: 'success',
@@ -111,7 +110,7 @@ export class CityListComponent implements OnInit {
 
       this.cities = [...this.cities];
       this.cityDialog = false;
-      this.city = {};
+      this.city = new City();
     }
   }
 

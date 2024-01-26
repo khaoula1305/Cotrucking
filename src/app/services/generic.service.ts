@@ -17,6 +17,12 @@ export class GenericService<T> {
     return this.http.get<T[]>(this.url);
   }
 
+  /***
+   * Get all
+   */
+  getById(id: string): Observable<T> {
+    return this.http.get<T>(this.url + id);
+  }
   /**
    * Create an item
    */
